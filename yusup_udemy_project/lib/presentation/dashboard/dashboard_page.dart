@@ -12,11 +12,17 @@ class DashboardPage extends StatelessWidget {
         title: Text("Dashboard"),
       ),
       body: Center(
-        child: ElevatedButton(
-          child: Text('Go To Settings'),
-          onPressed: () {
-            Get.to(SettingPage());
-          },
+        child: Column(
+          children: [
+            Text(Get.parameters['name']!),
+            Text((Get.arguments as List).map((e) => e).toString()),
+            ElevatedButton(
+              child: Text('Go To Settings'),
+              onPressed: () {
+                Get.to(SettingPage());
+              },
+            ),
+          ],
         ),
       ),
     );

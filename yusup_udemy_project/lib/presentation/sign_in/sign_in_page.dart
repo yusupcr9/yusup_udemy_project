@@ -10,6 +10,7 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
+  String? token;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +21,9 @@ class _SignInPageState extends State<SignInPage> {
         child: ElevatedButton(
           child: Text('Sign in'),
           onPressed: () {
-            Get.off(DashboardPage());
+            token = 'wakwaw';
+            Get.offNamed('/dashboard?name=yusup',
+                arguments: [token, "CikidawaAweu"]);
           },
         ),
       ),
